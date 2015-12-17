@@ -1,0 +1,61 @@
+﻿{
+  "items": [
+    {
+      "id": "1",
+      "category": "1",
+      "imagePath": "../../Content/Images/items/fujitsu.jpg",
+      "label": "Fujitsu lifebook S500",
+      "description": "La famille des PC Fujitsu ESPRIMO est une gamme complète de PC évolutifs et d'une très haute fiabilité.",
+      "votenumber": "7",
+      "rating": "5",
+      "price": "699.99"
+    },
+    {
+      "id": "2",
+      "category": "1",
+      "imagePath": "../../Content/Images/items/dell.jpg",
+      "label": "Dell powerhouse 5",
+      "description": "Dell propose des ordinateurs portables personnels ultra-fins, performants et prêts pour le jeu.",
+      "votenumber": "15",
+      "rating": "3",
+      "price": "499.99"
+    },
+    {
+      "id": "3",
+      "category": "2",
+      "imagePath": "../../Content/Images/items/chargeurFujitsu.jpg",
+      "label": "Chargeur lifebook 5",
+      "description": "Ici vous trouverez l'adaptateur secteur ou la batterie supplémentaire pour l'alimentation de votre PC portable Fujitsu Lifebook.",
+      "votenumber": "2",
+      "rating": "5",
+      "price": "10.99"
+    },
+    {
+      "id": "4",
+      "category": "2",
+      "imagePath": "../../Content/Images/items/chargeurDell.jpg",
+      "label": "Chargeur générique dell",
+      "description": "Retrouvez tous nos modèles de Batterie et chargeurs pour ordinateur portable Dell.",
+      "votenumber": "4",
+      "rating": "3",
+      "price": "10.99"
+    }
+  ],
+  "categories": [
+    {
+      "id": "0",
+      "label": "Tous les articles",
+      "imagePath": "../../Content/Images/categories/allCategory.jpg"
+    },
+    {
+      "id": "1",
+      "label": "Les ordinateurs",
+      "imagePath": "../../Content/Images/categories/computerCategory.jpg"
+    },
+    {
+      "id": "2",
+      "label": "Les accessoires",
+      "imagePath": "../../Content/Images/categories/accessoryCategory.jpg"
+    }
+  ]
+}

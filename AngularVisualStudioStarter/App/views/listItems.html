@@ -1,0 +1,81 @@
+﻿<div>
+    <nav role="navigation" class="navbar navbar-default customCenter" style="margin-top:-20px;" ng-controller="listCategoriesController">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li data-ng-repeat="category in categories" ng-class="{active: route.current.params.category==[category.id]}" }>
+                        <a href="#listItems/{{category.id}}">{{category.label}}</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        <!--<input type="text" class="autocomplete" ng-model="selected" typeahead="item.label for item in items | filter:$viewValue | limitTo:8" typeahead-on-select='onSelect($item)' class="form-control">-->
+                        <input type="text" class="autocomplete" typeahead-template-url="autocompleteItem.html" ng-model="customSelected" typeahead="item for item in items | filter:$viewValue | limitTo:8" typeahead-on-select='onSelect($item)' class="form-control">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row" ng-controller="listCategoriesController">
+        <div class="col-md-12">
+            <div class="carousel-holder">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner center-block" style="width:77%;">
+                        <div class="item" ng-class="{active:$first}" data-ng-repeat="category in categories">
+                            <a href="#listItems/{{category.id}}">
+                                <img class="slide-image" src="{{category.imagePath}}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-lg-4 col-md-4" data-ng-repeat="item in items">
+            <div class="image-container">
+                <img src="{{item.imagePath}}" class="img-responsive">
+                <div>
+                    <div class="caption">
+                        <h4 class="pull-right"><strong>{{item.price}}€</strong></h4>
+                        <h4>
+                            <!--<a href="#items/{{item.id}}">{{item.label}}</a>-->
+                            <a ng-click="open(item)">{{item.label}}</a>
+                        </h4>
+                        <p>{{item.description}}.</p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">{{item.votenumber}} votes</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star" ng-repeat="i in [1,2,3,4,5] | limitTo:-[item.rating]"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="autocompleteItem.html">
+    <a>
+        <img class="autocompleteImage" src="{{match.model.imagePath}}" alt="">
+        <span>{{match.model.label}}</span>
+    </a>
+</script>
+<script>
+    $(document).ready(function () {
+        $('#carousel').carousel({
+            interval: 3000
+        });
+    });
+</script>
